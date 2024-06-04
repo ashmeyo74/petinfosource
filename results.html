@@ -1,23 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8" content="width=device-width, initial-scale=1">
-    <title>Your Tiny Pet Site</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Your Tiny Pet Site</title>
 </head>
+
 <body>
-            <!-- Contains everything -->
-    <div class="container">
+    <!-- Contains everything -->
+    <div class="container-fluid">
+        <div class="row gx-5 justify-content-center mt-5">
 
-        <!--  Links to Veterinary Office's main page, Groomers, etc. -->
-        <div class="exteriorLinks"> </div>
-        
-        <!-- Info about your pet dependant on form info. Maybe facts about the pet breed? -->
-        <div class="petInfo"> </div>
+            <!-- User's current pets -->
+            <div class="col-md-2 text-center mt-5 border bg-light rounded-3" id="currentPets"> 
+                My Current Pets
+                <div class="border" id="petImage">
+                    Pet Image Generator
+                </div>
+                <div class="border rounded-3" id="pet1">
+                    Pet #1
+                </div>
+                <div class="border rounded-3" id="pet2">
+                    Pet #2
+                </div>
 
-        <!-- Adoption info  -->
-        <div class="adoptionBox"> </div>
+                Maybe instead of the pets #1 and #2, each pet can have their own photo with their name and the user can click on the picture to generate their pet's info?
+            </div>
+
+            <!-- User's current pet info and services -->
+            <div class="col-md-4 text-center mt-5 mx-4 border bg-light rounded-3" id="myPetInfo"> 
+                My Pet's Services and Information
+                <div class="border" id="photoAlbum">
+                    Photo Album
+                </div>
+                <div class="border" id="groomerLink">
+                    Groomer Link
+                </div>
+                <div class="border rounded-3" id="vetLink">
+                    Vet Link
+                </div>
+                <div class="border rounded-3" id="petAllergies">
+                    Allergies
+                </div>
+                <div class="border rounded-3" id="petFavorites">
+                    Pet Favorites (Toys/Foods/Snacks/Etc.)
+                </div>
+                <div class="border rounded-3" id="speciesFacts">
+                    Species Facts
+                </div>
+            </div>
+
+            <!-- Optional pet services user may be interested in -->
+            <div class="col-md-4 text-center mt-5 border bg-light rounded-3" id="optionalServices"> 
+                Optional Services I May Be Interested In
+                <div class="border" id="groomerLink">
+                    Adoption Link
+                </div>
+                <div class="border rounded-3" id="petSitting">
+                    Pet Sitting Link
+                </div>
+                <div class="border rounded-3" id="petTraining">
+                    Pet Training Link
+                </div>
+                <div class="border rounded-3" id="doggyDaycare">
+                    Doggy Daycare Link
+                </div>
+                <div class="border rounded-3" id="petHotel">
+                    Pet Hotel Link
+                </div>
+                <div class="border rounded-3" id="dogWalking">
+                    Dog Walking Link
+                </div>
+            </div>
+
+        </div>
     </div>
 
 </body>
+
 </html>
