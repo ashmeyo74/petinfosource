@@ -1,19 +1,33 @@
+const form = document.getElementById("forms")
+const formLinks = document.querySelector("formLinks")
 
-
+//  Needs literally everything, Listen for submit form
 function resultError() {
    //  Note: Put script here to serve as an error condition if user visits the page without specifying results
    // - Ashley
 }
 
+function parseForm() {
+    //  converts  form elements to text strings, ensures that links entered are actually links
+    form.addEventListener("submit", function() {
+        //  Checks to see if entered link is valid
+        if (!formLinks.checkValidity()) {
+            //  Create text node here at the bottom of the form "Please enter a valid link!"
+        } else {
+            //  Submit form
+        }
+    })
+}
+
+//  Waiting to see finalized forms
 function chooseForm() {
     //  Hides certain form on forms.html based on which option was selected 
        // - Ashley // CJ
+
+       parseForm()
 }
 
-function parseForm() {
-    //  converts  form elements to text strings, ensures that links entered are actually links
-       // - Ashley
-}
+
 
 function formResult() {
     //  Function to listen and apply form result to local storage. Moves pages after form is submitted
@@ -24,6 +38,7 @@ function formResult() {
     
 }
 
+//  Waiting on API
 function generatePet() {
     // pulls from local storage and uses an API to generate a pet image based on results from formResult
        // - Ashley // CJ
