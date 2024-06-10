@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Tiny Pet Site - Image Gallery</title>
+    <link rel="stylesheet" href="./assets/css/gallery.css">
+    <link rel="stylesheet" href="./assets/css/lightbox.css">
+
+</head>
+<body>
+    <div class="header">
+        <div class="button">
+            <button class="back-button" onclick="history.back()"> &#8592; Back </button>
+        </div>
+        <div class="upload">
+            <label for="input-file">Upload Image</label>
+        </div>
+    </div>
+    <div class="container">
+        <div class="gallery">
+            <input type="file" accept="img/jpeg, image/png, image/jpg" id="input-file">
+            <a href="./assets/images/gallery-images/1.jpg" data-lightbox="example" data-title="Example 1">
+                <img src="./assets/images/gallery-images/1.jpg">
+            </a>
+            <a href="./assets/images/gallery-images/2.jpg" data-lightbox="example" data-title="Example 2">
+                <img src="./assets/images/gallery-images/2.jpg">
+            </a>
+            <a href="./assets/images/gallery-images/3.jpg" data-lightbox="example" data-title="Example 3">
+                <img src="./assets/images/gallery-images/3.jpg">
+            </a>
+        </div>
+    </div>
+    <script src="./assets/js/lightbox-plus-jquery.js"></script>
+</body>
+
+</html>

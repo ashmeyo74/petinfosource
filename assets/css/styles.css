@@ -4,6 +4,7 @@
 }
 
 body {
+
     background-color: #4a7d7d;
     display: flex;
     justify-content: center;
@@ -50,3 +51,31 @@ h1 {
     background-color: #48cae4;
     color: #ffd700;
 }
+
+    background-color: pink;
+}
+
+.loadingScreen {
+    position: fixed;
+    background-color: inherit;
+    height: 100vh;
+    width:100vw;
+    text-align: center;
+    font-size: 42px;
+    }
+
+.loadingScreen img {
+    display: block;
+    margin:auto;
+    margin-top: 40vh;
+}
+
+@keyframes fade-out {
+    from {
+      opacity: 100%;
+    }
+    to {
+      opacity: 0%;
+    }
+  }
+
