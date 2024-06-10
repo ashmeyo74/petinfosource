@@ -1,79 +1,83 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8" content="width=device-width, initial-scale=1">
     <title>Your Tiny Pet Site</title>
     <link rel="stylesheet" href="./assets/css/form.css">
-    <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-
 <body>
     <!-- Contains everything -->
     <div class="container">
-
-        <!-- brings info from local storage on which form to show, script to hide/show -->
+        <!-- New Pet Form -->
         <div class="newPetDiv">
             <form class="newPetForm">
-                <!DOCTYPE html>
-                <html lang="en">
-
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Pet Details</title>
-                </head>
-
-                <body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
-                    <div
-                        style="text-align: center; border: 2px solid black; padding: 40px; border-radius: 15px; width: 70%; height: 80%; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div style="border: 2px solid black; padding: 20px; border-radius: 10px; font-size: 1.5em;">
-                            Pet Name
-                        </div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <div
-                                style="border: 2px solid black; padding: 20px; border-radius: 10px; font-size: 1.5em; flex: 1; margin-right: 10px;">
-                                Species
-                            </div>
-                            <div
-                                style="border: 2px solid black; padding: 20px; border-radius: 10px; font-size: 1.5em; flex: 1; margin-left: 10px;">
-                                Breed
-                            </div>
-                        </div>
-                        <div style="border: 2px solid black; padding: 20px; border-radius: 10px; font-size: 1.5em;">
-                            Groomer's Link
-                        </div>
-                        <div style="border: 2px solid black; padding: 20px; border-radius: 10px; font-size: 1.5em;">
-                            Are you looking to adopt?
-                        </div>
-                        <div style="border: 2px solid black; padding: 20px; border-radius: 10px; font-size: 1.5em;">
-                            Submit
-                        </div>
+                <div class="main-container">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Insert your pet's name!" required>
                     </div>
-                </body>
-
-                </html>
-
+                    <div class="form-group">
+                        <select class="form-control" required>
+                            <option value="" disabled selected>Species</option>
+                            <option value="cat">Cat</option>
+                            <option value="dog">Dog</option>
+                            <option value="bird">Bird</option>
+                            <option value="fish">Fish</option>
+                            <option value="rodent">Rodent</option>
+                            <option value="reptile">Reptile</option>
+                            <option value="horses">Horses</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Breed" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="url" class="form-control" placeholder="Vet office link" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="url" class="form-control" placeholder="Groomer link" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Want another pet?" required>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                </div>
             </form>
         </div>
 
-
-
+        <!-- Adoption Form -->
         <div class="adoptionDiv">
             <form class="adoptionForm">
-
+                <div class="main-container">
+                    <div class="form-group">
+                        <select class="form-control" required>
+                            <option value="" disabled selected>Species</option>
+                            <option value="cat">Cat</option>
+                            <option value="dog">Dog</option>
+                            <option value="bird">Bird</option>
+                            <option value="fish">Fish</option>
+                            <option value="rodent">Rodent</option>
+                            <option value="reptile">Reptile</option>
+                            <option value="horses">Horses</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Breed" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your location" required>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                </div>
             </form>
         </div>
-
-
-        <!-- Button to go back and resets local storage  -->
-        <div class="startOver"> </div>
+        <!-- Button to go back and resets local storage -->
+        <div class="startOver"></div>
     </div>
 
     <div class="loadingScreen" id="loadingScreen"><img src="./assets/images/pixel-cat.gif" src="https://media.tenor.com/0kHYtZJ4c_AAAAAi/pixel-cat.gif"> LOADING . . . </div>
 
     <script src="./assets/js/script.js"> </script>
     <script src="./assets/js/formLogic.js"> </script>
-</body>
 
+</body>
 </html>
