@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Tiny Pet Site - Image Gallery</title>
@@ -8,11 +9,17 @@
 
 </head>
 <body>
-    <div class="upload">
-        <a href="">Upload Image</a>
+    <div class="header">
+        <div class="button">
+            <button class="back-button" onclick="history.back()"> &#8592; Back </button>
+        </div>
+        <div class="upload">
+            <label for="input-file">Upload Image</label>
+        </div>
     </div>
     <div class="container">
         <div class="gallery">
+            <input type="file" accept="img/jpeg, image/png, image/jpg" id="input-file">
             <a href="./assets/images/gallery-images/1.jpg" data-lightbox="example" data-title="Example 1">
                 <img src="./assets/images/gallery-images/1.jpg">
             </a>
@@ -24,6 +31,7 @@
             </a>
         </div>
     </div>
-<script src="./assets/js/lightbox-plus-jquery.js"></script>
+    <script src="./assets/js/lightbox-plus-jquery.js"></script>
 </body>
+
 </html>
