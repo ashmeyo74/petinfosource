@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'BoyzRGross';
+    src: url('../fonts/BOYZRGRO.TTF') format('truetype');
+}
+
+body {
+
+    background-color: #4a7d7d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.main-container {
+    text-align: center;
+    background-color: #8fbf8f;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #ffd700;
+    margin-bottom: 20px;
+    font-family: 'BoyzRGross', Arial, sans-serif;
+}
+
+.box {
+    background-color: #a8dadc;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.btn {
+    width: 150px;
+    margin: 10px;
+    font-size: 1em;
+}
+
+.btn-yes {
+    background-color: #48cae4;
+    color: #ffd700;
+}
+
+.btn-no {
+    background-color: #48cae4;
+    color: #ffd700;
+}
+
+    background-color: pink;
+}
+
+.loadingScreen {
+    position: fixed;
+    background-color: inherit;
+    height: 100vh;
+    width:100vw;
+    text-align: center;
+    font-size: 42px;
+    }
+
+.loadingScreen img {
+    display: block;
+    margin:auto;
+    margin-top: 40vh;
+}
+
+@keyframes fade-out {
+    from {
+      opacity: 100%;
+    }
+    to {
+      opacity: 0%;
+    }
+  }
+
