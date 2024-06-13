@@ -1,0 +1,25 @@
+
+.loadingScreen {
+    position: fixed;
+    background-color: inherit;
+    height: 100vh;
+    width:100vw;
+    text-align: center;
+    font-size: 42px;
+    }
+
+.loadingScreen img {
+    display: block;
+    margin:auto;
+    margin-top: 40vh;
+}
+
+@keyframes fade-out {
+    from {
+      opacity: 100%;
+    }
+    to {
+      opacity: 0%;
+    }
+  }
+

@@ -39,7 +39,7 @@ body {
     box-shadow: none;
 }
 
-.btn-submit {
+.btn-submit, .btn-clear {
     background-color: #4a7d7d;
     color: white;
     border: none;
@@ -51,4 +51,15 @@ body {
 
 .btn-submit:hover {
     background-color: #376363;
+}
+
+.btn-clear {
+    background-color: #df3535;
+    width: 60%;
+    margin-top:20px;
+    font-size:1em;
+}
+
+.btn-clear:hover {
+    background-color: #a74444;
 }
