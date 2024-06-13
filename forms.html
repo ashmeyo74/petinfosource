@@ -4,11 +4,12 @@
     <meta charset="UTF-8" content="width=device-width, initial-scale=1">
     <title>Your Tiny Pet Site</title>
     <link rel="stylesheet" href="./assets/css/form.css">
+    <link rel="stylesheet" href="./assets/css/loadingScreen.css">
 </head>
 <body>
     <div class="container">
         <!-- New Pet Form -->
-        <div class="newPetDiv">
+        <div class="newPetDiv" id="petForm">
             <form class="newPetForm">
                 <div class="main-container">
                     <div class="form-group">
@@ -23,28 +24,30 @@
                             <option value="fish">Fish</option>
                             <option value="rodent">Rodent</option>
                             <option value="reptile">Reptile</option>
-                            <option value="horses">Horses</option>
+                            <option value="horses">Horse</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Breed" required>
                     </div>
                     <div class="form-group">
-                        <input type="url" class="form-control" placeholder="Vet office link" required>
+                        <input type="url" class="form-control" placeholder="Vet office link">
                     </div>
                     <div class="form-group">
-                        <input type="url" class="form-control" placeholder="Groomer link" required>
+                        <input type="url" class="form-control" placeholder="Groomer link">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Want another pet?" required>
                     </div>
-                    <button type="submit" class="btn btn-submit">Submit</button>
-                </div>
+                    <button type="button" class="btn btn-submit">Submit</button>
+                    
             </form>
+            <button type="clear" class="btn btn-clear" onclick="clearForm()">Go Back!</button>
+           </div>
         </div>
 
         <!-- Adoption Form -->
-        <div class="adoptionDiv">
+        <div class="adoptionDiv" id="adoptForm">
             <form class="adoptionForm">
                 <div class="main-container">
                     <div class="form-group">
@@ -66,12 +69,12 @@
                         <input type="text" class="form-control" placeholder="Your location" required>
                     </div>
                     <button type="submit" class="btn btn-submit">Submit</button>
-                </div>
-            </form>
+                </form>
+                <button type="clear" class="btn btn-clear" onclick="clearForm()">Go Back!</button>
+               </div>
+            </div>
         </div>
 
-        <!-- Button to go back and reset local storage -->
-        <div class="startOver"></div>
     </div>
 
     <div class="loadingScreen" id="loadingScreen">

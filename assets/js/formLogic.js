@@ -4,6 +4,12 @@
 //     //  if/else statement?
 //     //-Aiyana
 // }
+
+const hasPet = document.querySelector("#btn-yes")
+const noPet = document.querySelector("#btn-no")
+const petForm = document.getElementById("petForm")
+const adoptForm = document.getElementById("adoptForm")
+
 function generateResult() {
     // Get the container where the result will be displayed
     const resultContainer = document.getElementById('resultContainer');
@@ -41,3 +47,34 @@ function generateResult() {
     }
 }
 
+//  Checks loclastorage and hides either petForm or adoptForm on conditional
+ function formHide () {
+    if (localStorage.getItem('petStatus') === 'true') {
+        adoptForm.style.display = "none";
+        petForm.style.display = "block";
+    } else {
+        petForm.style.display = "none";
+        adoptForm.style.display = "block";
+    }
+
+
+}
+
+// Saves the result of the button to local storage, then moves to forms.html
+function saveYes() {
+    localStorage.setItem('petStatus', 'true');
+    window.location.href = "/forms.html";
+}
+
+// Saves the result of the button to local storage, then moves to forms.html
+function saveNo() {
+    localStorage.setItem('petStatus', 'false');
+    window.location.href = "/forms.html";
+}
+
+//  Ensures that the page is currently  on '/forms/html' and that the DOM is properly loaded before running formHide()
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.location.pathname === '/forms.html') {
+        formHide();
+    }
+});
