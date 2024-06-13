@@ -1,1 +1,54 @@
-/*  work-in-progress content  */
+@font-face {
+    font-family: 'BoyzRGross';
+    src: url('../fonts/BOYZRGRO.TTF') format('truetype');
+}
+
+body {
+    background-color: #fcd5ce;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.main-container {
+    background-color: #fec5bb;
+    padding: 40px;
+    border-radius: 15px;
+    width: 60%;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    background-color: #8fbf8f;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1.2em;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.btn-submit {
+    background-color: #4a7d7d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.btn-submit:hover {
+    background-color: #376363;
+}
