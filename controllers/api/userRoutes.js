@@ -1,34 +1,35 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+// POST endpoint to create new user
 router.post('/', async (req, res) => {
   try {
-    const userData = await User.create(req.body);
-
+    const user = await User.create(req.body);
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.user_id = user.id;
       req.session.logged_in = true;
-
-      res.status(200).json(userData);
+      const { password, ...userWithoutPassword } = user.get();
+      res
+        .status(200)
+        .json({ user: userWithoutPassword, message: 'User Registered' });
     });
-  } catch (err) {
-    res.status(400).json(err);
+  } catch (error) {
+    res.status(400).json({ message: error.message, error });
   }
 });
 
+// POST endpoint to login user
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
-
-    if (!userData) {
+    const user = await User.findOne({ where: { email: req.body.email } });
+    if (!user) {
       res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
-
+    const validPassword = user.checkPassword(req.body.password);
     if (!validPassword) {
       res
         .status(400)
@@ -37,24 +38,26 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.user_id = user.id;
       req.session.logged_in = true;
-      
-      res.json({ user: userData, message: 'You are now logged in!' });
+      const { password, ...userWithoutPassword } = user.get();
+      res
+        .status(200)
+        .json({ user: userWithoutPassword, message: 'You are now logged in!' });
     });
-
-  } catch (err) {
-    res.status(400).json(err);
+  } catch (error) {
+    res.status(400).json({ message: error.message, error });
   }
 });
 
-router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
+// POST endpoint to logout user
+router.post('/logout', async (req, res) => {
+  try {
     req.session.destroy(() => {
       res.status(204).end();
     });
-  } else {
-    res.status(404).end();
+  } catch (error) {
+    res.status(404).json({ message: error.message, error });
   }
 });
 
