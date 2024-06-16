@@ -1,3 +1,13 @@
+// If the user tries to visit the results page while local storage is empty, brings them back to the main page.
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.location.pathname === '/results.html' && localStorage.getItem('petStatus') === null) {
+        window.location.href = "/"
+    }
+});
+
+
+
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 const clear = document.querySelector("#clear")
@@ -27,3 +37,4 @@ function clearForm() {
 function taskReminder() {
 // Renee
 }
+
