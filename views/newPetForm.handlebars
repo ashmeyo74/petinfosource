@@ -1,13 +1,20 @@
-{{!-- views/newPetForm.handlebars --}}
-<div class="container">
-        <div class="newPetDiv" id="petFormDiv">
-            <form class="newPetForm" id="petForm">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/assets/css/form.css">
+</head>
+<body>
+    <div class="container">
+        <div class="newPetDiv">
+            <form class="newPetForm">
                 <div class="main-container">
                     <div class="form-group">
-                        <input type="text" id= "petName" class="form-control" placeholder="Insert your pet's name!" required>
+                        <input type="text" class="form-control" placeholder="Insert your pet's name!" required>
                     </div>
                     <div class="form-group">
-                        <select id="petSpecies" class="form-control" required>
+                        <select class="form-control" required>
                             <option value="" disabled selected>Species</option>
                             <option value="cat">Cat</option>
                             <option value="dog">Dog</option>
@@ -15,35 +22,27 @@
                             <option value="fish">Fish</option>
                             <option value="rodent">Rodent</option>
                             <option value="reptile">Reptile</option>
-                            <option value="horses">Horse</option>
+                            <option value="horses">Horses</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="petBreed" class="form-control" placeholder="Breed" required>
+                        <input type="text" class="form-control" placeholder="Breed" required>
                     </div>
                     <div class="form-group">
-                        <input type="url" id="vetOffice" class="form-control" placeholder="Vet office link">
+                        <input type="url" class="form-control" placeholder="Vet office link" required>
                     </div>
                     <div class="form-group">
-                        <input type="url" id="groomerLink" class="form-control" placeholder="Groomer link">
+                        <input type="url" class="form-control" placeholder="Groomer link" required>
                     </div>
                     <div class="form-group">
-                        <textarea rows="3" id="petAllergies" class="form-control" placeholder="Allergies"></textarea>
+                        <input type="text" class="form-control" placeholder="Want another pet?" required>
                     </div>
-                    <div class="form-group">
-                        <textarea rows="3" id="petFavorites" class="form-control" placeholder="Your Pet's Favorite toys, food, etc."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="yes_no_radio">Do you want another pet?</label><br>
-                                 <input type="radio" id="yes" name="yes_no" required>Yes</input>
-                                <input type="radio" id="no" name="yes_no">No</input>
-                    </div>
-                    <button type="submit" id="hasPetSubmit" class="btn btn-submit">Submit</button>
-                    <div id="error-condition" class="error-condition">
-
-                    </div>
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                </div>
             </form>
-            <button type="clear" class="btn btn-clear" onclick="clearForm()">Go Back!</button>
-           </div>
         </div>
-</div>
+    </div>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/formLogic.js"></script>
+</body>
+</html>
