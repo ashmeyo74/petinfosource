@@ -1,26 +1,31 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
 const path = require('path');
 const app = express();
 
-// Set up Handlebars
-const exphbs = require('express-handlebars');
-app.engine('handlebars', exphbs({ defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts') }));
+const hbs = exphbs.create({
+  defaultLayout: 'main',
+  helpers: {
+    ifEquals: (arg1, arg2, options) => {
+      return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+    }
+  }
+});
+
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// Serve static files
+// Static folder
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'assets')));
 
-// Body parser middleware
-app.use(express.urlencoded({ extended: true }));
+// Body Parser Middleware
+app.use(express.urlencoded({ extended: false }));
 
 // Routes
-const newPetRoutes = require('./routes/newPet');
-const adoptionRoutes = require('./routes/adoption');
-app.use('/', newPetRoutes);
-app.use('/', adoptionRoutes);
+const indexRoute = require('./routes/index');
+const formRoute = require('./routes/forms');
+app.use('/', indexRoute);
+app.use('/forms', formRoute);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
