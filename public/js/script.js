@@ -1,28 +1,48 @@
+// If the user tries to visit the results page while local storage is empty, brings them back to the main page.
+document.addEventListener("DOMContentLoaded", function() {
+    if (window.location.pathname === '/results.html' && localStorage.getItem('petStatus') === null) {
+        window.location.href = "/";
+    }
+});
+
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
-const clear = document.querySelector("clearButton")
-const hiddenDiv = document.getElementById("loadingScreen")
+const hiddenDiv = document.getElementById("loadingScreen");
 
-
-//  Waits for two seconds before fading out of the running cat gif
 const loadContent = async () => {
-    await delay(2000);
     hiddenDiv.style.animation = "fade-out 2s forwards";
-    hiddenDiv.style.display = "hidden";
+    await delay(2000);
+    hiddenDiv.remove();
 }
 
-// Checks to see if the page is loaded, then runs the loadContent function
-document.addEventListener("DOMContentLoaded", loadContent())
+document.addEventListener("DOMContentLoaded", loadContent);
 
-
-//  On click of a certain button on the form, will clear local storage. needs form creation though
 function clearForm() {
-    clear.addEventListener("onclick", function() {
+    if (window.confirm("Are you sure you want to start over?")) {
         localStorage.clear();
-        document.createTextNode("") // Fix to create element "Form cleared!"
-    })
+        window.location.href = "/";
+    }
 }
 
 function taskReminder() {
-// Renee
+    // Renee
+}
+
+// Function to handle redirection based on user choice
+function showFormsPage(choice) {
+    fetch('forms.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('main-container').innerHTML = data;
+
+            // Wait for the content to be added to the DOM
+            setTimeout(() => {
+                if (choice === 'yes') {
+                    document.getElementById('link-new-pet').click();
+                } else {
+                    document.getElementById('link-adopt').click();
+                }
+            }, 0);
+        })
+        .catch(error => console.error('Error loading forms:', error));
 }
