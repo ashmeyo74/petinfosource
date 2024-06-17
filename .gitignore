@@ -132,4 +132,4 @@ dist
 # MacOS
 .DS_Store
 .AppleDouble
-.LSOverride
+.LSOverride.DS_Store
