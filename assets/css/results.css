@@ -4,9 +4,14 @@
     border-radius: 30px;
 }
 
+.mainPet {
+    display:block;
+}
 
 
-
+.notMain {
+    display:none;
+}
 
 
 
