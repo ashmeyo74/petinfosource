@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="./assets/css/loadingScreen.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="main-container">
         <div class="main-container">
             <h1>Welcome to Your Tiny Pet Site!</h1>
             <div class="box">Do you have a pet already?</div>
             <div>
-                <button class="btn btn-yes" id="btn-yes" onclick="saveYes()">Yes!</button> 
-             <button class="btn btn-no" id="btn-no" onclick="saveNo()">No but I want one!</button>
+                <button class="btn btn-yes" id="btn-yes" onclick="showFormsPage('yes')">Yes!</button> 
+                <button class="btn btn-no" id="btn-no" onclick="showFormsPage('no')">No but I want one!</button>
             </div>
         </div>
         <!-- Button to go back and resets local storage  -->
@@ -35,7 +35,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="assets/js/formLogic.js"></script>
-    <script type="module" src="./assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
-

@@ -1,0 +1,41 @@
+{{!-- views/newPetForm.handlebars --}}
+<div class="container">
+    <div class="newPetDiv" id="petFormDiv">
+        <form class="newPetForm" id="petForm">
+            <div class="main-container">
+                <div class="form-group">
+                    <input type="text" id="petName" class="form-control" placeholder="Insert your pet's name!" required>
+                </div>
+                <div class="form-group">
+                    <select id="petSpecies" class="form-control" required>
+                        <option value="" disabled selected>Species</option>
+                        <option value="cat">Cat</option>
+                        <option value="dog">Dog</option>
+                        <option value="bird">Bird</option>
+                        <option value="fish">Fish</option>
+                        <option value="rodent">Rodent</option>
+                        <option value="reptile">Reptile</option>
+                        <option value="horses">Horse</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="petBreed" class="form-control" placeholder="Breed" required>
+                </div>
+                <div class="form-group">
+                    <input type="url" id="vetOffice" class="form-control" placeholder="Vet office link">
+                </div>
+                <div class="form-group">
+                    <input type="url" id="groomerLink" class="form-control" placeholder="Groomer link">
+                </div>
+                <div class="form-group">
+                    <label for="yes_no_radio">Do you want another pet?</label><br>
+                    <input type="radio" id="yes" name="yes_no" required>Yes
+                    <input type="radio" id="no" name="yes_no">No
+                </div>
+                <button type="submit" id="hasPetSubmit" class="btn btn-submit">Submit</button>
+                <div id="error-condition" class="error-condition"></div>
+            </div>
+        </form>
+        <button type="button" class="btn btn-clear" onclick="clearForm()">Go Back!</button>
+    </div>
+</div>
