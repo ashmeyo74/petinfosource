@@ -1,17 +1,15 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const exphbs = require('express-handlebars');
 
 // Set up Handlebars
-app.engine('handlebars', exphbs({
-    defaultLayout: 'main',
-    layoutsDir: path.join(__dirname, 'views/layouts')
-}));
+const exphbs = require('express-handlebars');
+app.engine('handlebars', exphbs({ defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts') }));
 app.set('view engine', 'handlebars');
 
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'assets')));
 
 // Body parser middleware
 app.use(express.urlencoded({ extended: true }));
