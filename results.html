@@ -7,86 +7,44 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="stylesheet" href="./assets/css/loadingScreen.css">
     <title>Your Tiny Pet Site</title>
 </head>
 
 <body>
     <!-- Contains everything -->
-    <div class="container-fluid">
+    <div class="container-fluid" id="resultContainer">
         <div class="row gx-5 justify-content-center mt-5">
 
             <!-- User's current pets -->
             <div class="col-md-2 text-center mt-5 bg-light results-column" id="currentPets"> 
-                My Current Pets
+                <h3>My Current Pets</h3>
                 <div class="border" id="imageGallery">
                     <a href="./gallery.html">Image Gallery</a>
                 </div>
-                <div class="border rounded-3" id="pet1">
-                    Pet #1
-                </div>
-                <div class="border rounded-3" id="pet2">
-                    Pet #2
-                </div>
-
-                Maybe instead of the pets #1 and #2, each pet can have their own photo with their name and the user can click on the picture to generate their pet's info?
             </div>
 
-            <!-- User's current pet info and services -->
+        <!-- User's current pet info and services -->
             <div class="col-md-4 text-center mt-5 mx-4 bg-light results-column" id="myPetInfo"> 
-                My Pet's Services and Information
-                <div class="border" id="photoAlbum">
-                    Photo Album
-                </div>
-                <div class="border" id="groomerLink">
-                    Groomer Link
-                </div>
-                <div class="border rounded-3" id="vetLink">
-                    Vet Link
-                </div>
-                <div class="border rounded-3" id="petAllergies">
-                    Allergies
-                </div>
-                <div class="border rounded-3" id="petFavorites">
-                    Pet Favorites (Toys/Foods/Snacks/Etc.)
-                </div>
-                <div class="border rounded-3" id="speciesFacts">
-                    Species Facts
-                </div>
+                <h3>My Pet's Services and Information</h3>
             </div>
-
-            <!-- Optional pet services user may be interested in -->
-            <div class="col-md-4 text-center mt-5 bg-light results-column" id="optionalServices"> 
-                Optional Services I May Be Interested In
-                <div class="border" id="groomerLink">
-                    Adoption Link
-                </div>
-                <div class="border rounded-3" id="petSitting">
-                    Pet Sitting Link
-                </div>
-                <div class="border rounded-3" id="petTraining">
-                    Pet Training Link
-                </div>
-                <div class="border rounded-3" id="doggyDaycare">
-                    Doggy Daycare Link
-                </div>
-                <div class="border rounded-3" id="petHotel">
-                    Pet Hotel Link
-                </div>
-                <div class="border rounded-3" id="dogWalking">
-                    Dog Walking Link
                 </div>
             </div>
 
         </div>
     </div>
-        <!-- Loading screen  -->
-        <div class="loadingScreen" id="loadingScreen">
-            <img src="./assets/images/pixel-cat.gif" alt="Loading" />
-            LOADING . . .
-        </div>
-        
+
+                <!-- Optional pet services user may be interested in -->
+                <div class="col-md-4 text-center mt-5 bg-light results-column" id="optionalServices"> 
+                    Optional Services I May Be Interested In
+                    <div class="border rounded-3" id="petSitting">
+                        <a href=https://petsitters.org> Resources for Pet Sitting </a>
+                    </div>
+                    <div class="border rounded-3" id="petTraining">
+                        <a href="https://www.ccpdt.org/resources/"> Resoruces for Pet Training </a>
+                    </div>
+
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/formLogic.js"></script>
 </body>
 
 </html>
